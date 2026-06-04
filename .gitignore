@@ -1,0 +1,30 @@
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# Archivos de configuración locales
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Variables de entorno (API keys)
+.env
+
+# Archivos de logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.swp
+*.swo
+
+# Configuración de IDEs
+.vscode/
+.idea/
+*.iml
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
