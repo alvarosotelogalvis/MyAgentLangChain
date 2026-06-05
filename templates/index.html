@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Multi-LLM Agent</title>
+  <title>Multi-LLM Agent – Interlan</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,15 +27,52 @@
     }
 
     header {
-      padding: 16px 20px;
+      padding: 10px 20px;
       background: #1a1a2e;
       color: #fff;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    header h1 { font-size: 1.1rem; font-weight: 600; flex: 1; }
+    .header-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.25);
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    header h1 { font-size: 1rem; font-weight: 600; }
+
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      color: #4ade80;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .security-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: #4ade80;
+    }
 
     select {
       background: #2a2a4e;
@@ -45,6 +82,43 @@
       padding: 6px 10px;
       font-size: 0.85rem;
       cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .creator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .creator-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.35);
+      flex-shrink: 0;
+    }
+
+    .creator-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .creator-label {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .creator-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
     }
 
     #messages {
@@ -151,12 +225,38 @@
 <body>
 <div class="container">
   <header>
-    <h1>Multi-LLM Agent</h1>
+    <img
+      class="header-logo"
+      src="https://www.interlan.com.co/wp-content/uploads/2023/03/logo-interlan-web@3x-8.png"
+      alt="Interlan"
+    />
+    <div class="header-divider"></div>
+    <div class="header-title">
+      <h1>Multi-LLM Agent</h1>
+      <div class="security-badge">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+        </svg>
+        Protegido con TrendAI -> AI Scanner
+      </div>
+    </div>
     <select id="provider">
       <option value="gemini">Gemini</option>
       <option value="openai">OpenAI</option>
       <option value="anthropic">Anthropic</option>
     </select>
+
+    <div class="creator">
+      <img
+        class="creator-avatar"
+        src="https://media.licdn.com/dms/image/v2/D4E03AQFvGHKf5uKh3g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1683514895920?e=2147483647&v=beta&t=m0zNTsNnKwHx-1EXx7M7fKJ0lgogU1w2VcFSmZJwNCg"
+        alt="Álvaro Sotelo"
+      />
+      <div class="creator-info">
+        <span class="creator-name">Alvaro Sotelo</span>
+        <span class="creator-label">alvarosg@interlan.com.co</span>
+      </div>
+    </div>
   </header>
 
   <div id="messages"></div>
